@@ -9,7 +9,7 @@
 	<div class="container jumbotron bg-dark text-white">
 
 				<li>
-				<p><a href="{% url 'details'  %}">Patient No. : {{patient.patientnumber}}</p></a>
+				<p>Patient No. : {{patient.patientnumber}}</p>
 				<p>State : {{patient.detectedstate}}</p>
 				<p>Possible Disease Transmission from :
 					{% if patient.contractedfromwhichpatientsuspected %}
