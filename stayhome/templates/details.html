@@ -4,6 +4,8 @@
 	<title></title>
 </head>
 <body>
- 	<h1>Hello</h1>
+	{% for case in corona %}
+ 	<h1>Total cases : {{case.total}}</h1>
+	{% endfor %}
 </body>
 </html>

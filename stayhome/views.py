@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView , DetailView
+from . models import Corona
 
 
 def patients(request):
@@ -16,8 +17,8 @@ def patients(request):
 
 
 def details(request):
-
-	return render(request , 'details.html', {})
+	corona = Corona.objects.all()
+	return render(request , 'details.html', {'corona':corona})
 
 
 def home(request):
@@ -29,3 +30,14 @@ def home(request):
 	except Exception as e:
 		state_status = "Error"
 	return render(request , 'home.html', {'state_status':state_status})
+
+
+def total(request):
+	import json
+	import requests
+	country_cases = requests.get("https://api.covid19india.org/data.json")
+	try:
+		total = json.loads(country_cases.content)
+	except Exception as e:
+		total = "Error"
+	return render(request , 'total.html' , {'total':total})

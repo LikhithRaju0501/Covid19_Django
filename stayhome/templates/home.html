@@ -13,9 +13,7 @@
 <body>
 <div class="container jumbotron bg-dark text-white">
     <h2>India COVID-19 Coronavirus Daily Report Page</h2>    
-    <div id="panels">
-    <h2>Total</h2>
-    <p>U.V.C.E is one of the best Engg Collleges in Karnataka</p>
+    <div id="panels"> 
     {% for key , value in state_status.items %}
     <h2>{{key}}</h2>
       <div class="panels2"> 
@@ -34,7 +32,7 @@
         $("#panels").accordion({
             collapsible : true ,
             event : "click" ,
-            active : 0,
+            active : 9,
             animate : 300 ,
             heightStyle : true 
         });
