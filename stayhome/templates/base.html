@@ -8,15 +8,18 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+       <link rel="stylesheet" href="{% static 'jqueryui/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'jqueryui/jquery-ui.structure.css' %}">
+    <link rel="stylesheet" href="{% static 'jqueryui/jquery-ui.theme.css' %}">
     <title>COVID - 19</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">
-    <img src="{% static 'img/corona.jpeg' %}" width="50" height="50" class="d-inline-block" alt="Myimg">  StayHome
-  </a>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'total' %}">Overall<span class="sr-only">(current)</span></a>
@@ -29,10 +32,28 @@
       </li>
     </ul>
   </div>
-</nav>
+</nav> <br>
     {% block content %}
 
 	{% endblock %}
+   <script src="{% static 'jquery.js' %}"></script>
+    <script src="{% static 'jqueryui/jquery-ui.js' %}"></script>
+    <script>
+        $("#panels").accordion({
+            collapsible : true ,
+            event : "click" ,
+            active : 9,
+            animate : 300 ,
+            heightStyle : true 
+        });
+             $("#panels2").accordion({
+            collapsible : true ,
+            event : "mouseover" ,
+            active : 0,
+            animate : 300 ,
+            heightStyle : true 
+        });
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
  	   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

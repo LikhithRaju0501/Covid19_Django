@@ -20,7 +20,7 @@
     <tr>
            				{% if total %}
 	{% for case in total.statewise %}
-      <th scope="row">{{case.state}}</th>
+      <td>{{case.state}}</td>
       <td>{{case.confirmed}} (+ {{case.deltaconfirmed}})</td>
       <td>{{case.active}}</td>
       <td>{{case.recovered}} ( + {{case.deltarecovered}})</td>
