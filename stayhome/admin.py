@@ -1,4 +1,4 @@
 from django.contrib import admin
-from . models import Corona
+from . models import Tabliki
 
-admin.site.register(Corona)
+admin.site.register(Tabliki)

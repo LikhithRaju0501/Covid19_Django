@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+   
+<br>
+{% if p %}
+<div style="color: white">
+ <h10 id="active"> {{ p.active }} </h10>  <h10 id="confirmed"> {{ p.confirmed }} </h10> <h10 id="recovered"> {{ p.recovered }} </h10> <h10 id="deaths"> {{ p.deaths }} </h10>
+ </div>
+{% endif %}
+
+<div class="container">
+        <div class="row">
+            <div class="col-6 chart">
+              <canvas id="myChart2" width="500" height=500></canvas>
+            </div>
+    </div>
+
+    </div>
+
+    <p style="color: red">*Page is still under complete developmet</p>
+
+    <script src="{% static 'total.js' %}"></script>
+    
+{% endblock %}

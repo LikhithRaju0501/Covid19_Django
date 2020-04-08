@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{% for items in t  %}
+    <h1 id="ttt">{{items.tabliki}}</h1> <br>
+    <h1 id="ppp">{{items.nontab}}</h1>
+{% endfor %}
+
+   {% if total %}
+        {% for case in total.statewise %}
+            {{case.state}}
+        {% endfor %}
+    {% endif %}
+
+    <br>
+    {% if p %}
+{% for case in total.statewise %}
+{{p}}
+ {% endfor %}
+{% else %}
+Error
+{% endif %}
+
+    <script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>

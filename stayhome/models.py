@@ -1,40 +1,7 @@
 from django.db import models
 
-class Corona(models.Model):
-	total = models.IntegerField()
-	active = models.IntegerField()
-	recovered = models.IntegerField()
-	death = models.IntegerField()
-	Kerala = models.IntegerField()
-	Delhi = models.IntegerField()
-	Telangana = models.IntegerField()
-	Rajasthan = models.IntegerField()
-	Haryana = models.IntegerField()
-	Up = models.IntegerField()
-	Ladakh = models.IntegerField()
-	Tn = models.IntegerField()
-	Jammu = models.IntegerField()
-	Karnataka = models.IntegerField()
-	Maharashtra = models.IntegerField()
-	Punjab = models.IntegerField()
-	Andhra = models.IntegerField()
-	Uttarakhand = models.IntegerField()
-	Odisha = models.IntegerField()
-	Puducherry = models.IntegerField()
-	Wb = models.IntegerField()
-	Chandigarh = models.IntegerField()
-	Chhattisgarh = models.IntegerField()
-	Gujarat = models.IntegerField()
-	Himachal = models.IntegerField()
-	Mp = models.IntegerField()
-	Bihar = models.IntegerField()
-	Manipur = models.IntegerField()
-	Mizoram = models.IntegerField()
-	Goa = models.IntegerField()
-	Andaman = models.IntegerField()
-	Jharkhand = models.IntegerField()
-	Assam = models.IntegerField()
-	Arunachal = models.IntegerField()
-
-	def __str__(self):
-		return self.total
+class Tabliki(models.Model):
+	tabliki = models.IntegerField()
+	nontab = models.IntegerField()
+		
+		

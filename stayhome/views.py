@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView , DetailView
-from . models import Corona
+from . models import Tabliki
 
 
 def patients(request):
@@ -35,9 +35,37 @@ def home(request):
 def total(request):
 	import json
 	import requests
+	t = Tabliki.objects.all()
 	country_cases = requests.get("https://api.covid19india.org/data.json")
 	try:
 		total = json.loads(country_cases.content)
 	except Exception as e:
 		total = "Error"
-	return render(request , 'total.html' , {'total':total})
+	p = total['statewise'][0]
+	return render(request , 'total.html' , {'total':total , 't':t , 'p':p})
+
+
+
+def stats(request):
+	import json
+	import requests
+	t = Tabliki.objects.all()
+	country_cases = requests.get("https://api.covid19india.org/data.json")
+	try:
+		total = json.loads(country_cases.content)
+	except Exception as e:
+		total = "Error"
+	p = total['statewise'][0]
+	return render(request , 'stats.html', {'t':t , 'total':total , 'p':p})
+
+def for_stats(request):
+	import json
+	import requests
+	t = Tabliki.objects.all()
+	country_cases = requests.get("https://api.covid19india.org/data.json")
+	try:
+		total = json.loads(country_cases.content)
+	except Exception as e:
+		total = "Error"
+	p = total['statewise'][0]['active']
+	return render(request , 'for_stats.html', {'t':t , 'total':total, 'p':p})
