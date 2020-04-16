@@ -17,8 +17,7 @@ def patients(request):
 
 
 def details(request):
-	corona = Corona.objects.all()
-	return render(request , 'details.html', {'corona':corona})
+	return render(request , 'details.html', {})
 
 
 def home(request):

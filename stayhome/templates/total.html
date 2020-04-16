@@ -6,7 +6,13 @@
 
 	
 
-    <div class="container">
+    <div class="container"> 
+      <div class="col-11">
+      <div class="alert alert-success" role="alert">
+    <p id="msg" onclick="message()"></p>
+  </div>
+  </div>
+  <br><br>
         <div class="row">
                <div class="col-11 chart">
                 {% if total %}
@@ -47,7 +53,31 @@
     </div>
     </div>
 
+    <script type="text/javascript">
+        setInterval(message, 3000);
 
-    <script src="{% static 'total.js' %}"></script>
+  function  message(){
+      { 
+      fetch('{% static 'website_data.json' %}')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data.factoids.length)
+  x=Math.floor(Math.random() * data.factoids.length) + 1;
+  if(x>25){
+    document.getElementById('msg').innerHTML = "#StayHomeStaySafe"; 
+  }
+  else{
+  console.log(x);
+    console.log(data.factoids[x].banner);
+    document.getElementById('msg').innerHTML = data.factoids[x].banner; 
+    console.log(x);
+  }
+  });
+
+  }
+    }
+    </script>
 
 {% endblock %}
