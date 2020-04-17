@@ -8,8 +8,8 @@
 
     <div class="container"> 
       <div class="col-11">
-      <div class="alert alert-success" role="alert">
-    <p id="msg" onclick="message()"></p>
+      <div class="alert alert-success alert-link" role="alert">
+    <p id="msg" onclick="message()" style="text-align: center;" >#StayHomeStaySafe</p>
   </div>
   </div>
   <br><br>
@@ -29,7 +29,7 @@
 
     </tr>
   </thead>
-  <tbody>
+  <tbody> 
     <tr>
                   {% if total %}
   {% for case in total.statewise %}
@@ -54,7 +54,7 @@
     </div>
 
     <script type="text/javascript">
-        setInterval(message, 3000);
+        setInterval(message, 3500);
 
   function  message(){
       { 
@@ -63,16 +63,12 @@
     return response.json();
   })
   .then((data) => {
-    console.log(data.factoids.length)
   x=Math.floor(Math.random() * data.factoids.length) + 1;
-  if(x>25){
+  if(x>data.factoids.length){
     document.getElementById('msg').innerHTML = "#StayHomeStaySafe"; 
   }
   else{
-  console.log(x);
-    console.log(data.factoids[x].banner);
     document.getElementById('msg').innerHTML = data.factoids[x].banner; 
-    console.log(x);
   }
   });
 
